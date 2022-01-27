@@ -1,0 +1,5 @@
+query Media($mediaId: Int, $type: MediaType) {
+  Media(id: $mediaId, type: $type) {
+    ...MediaFragment
+  }
+}

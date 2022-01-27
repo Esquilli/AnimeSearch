@@ -1,0 +1,12 @@
+query Search($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort]) {
+  Page(page: $page, perPage: $perPage) {
+    media(search: $search, type: $type, sort: $sort) {
+      isAdult
+      ...MediaFragment
+    }
+    pageInfo {
+      currentPage
+      hasNextPage
+    }
+  }
+}

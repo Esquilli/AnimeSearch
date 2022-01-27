@@ -1,0 +1,38 @@
+fragment MediaFragment on Media {
+  id
+  title {
+    english
+    native
+    romaji
+  }
+  status
+  startDate {
+    year
+    month
+    day
+  }
+  endDate {
+    day
+    month
+    year
+  }
+  genres
+  episodes
+  duration
+  description
+  coverImage {
+    color
+    extraLarge
+    large
+    medium
+  }
+  trailer {
+    id
+    site
+    thumbnail
+  }
+  externalLinks {
+    site
+    url
+  }
+}

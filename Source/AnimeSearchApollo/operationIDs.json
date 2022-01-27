@@ -1,0 +1,10 @@
+{
+  "81737d48e41a56aa3ee55cb325195ffcc737e4918febae86384a1b75088d74d4": {
+    "name": "Media",
+    "source": "query Media($mediaId: Int, $type: MediaType) {\n  Media(id: $mediaId, type: $type) {\n    __typename\n    ...MediaFragment\n  }\n}\nfragment MediaFragment on Media {\n  __typename\n  id\n  title {\n    __typename\n    english\n    native\n    romaji\n  }\n  status\n  startDate {\n    __typename\n    year\n    month\n    day\n  }\n  endDate {\n    __typename\n    day\n    month\n    year\n  }\n  genres\n  episodes\n  duration\n  description\n  coverImage {\n    __typename\n    color\n    extraLarge\n    large\n    medium\n  }\n  trailer {\n    __typename\n    id\n    site\n    thumbnail\n  }\n  externalLinks {\n    __typename\n    site\n    url\n  }\n}"
+  },
+  "4be96ef45fd466f7a7b9f30736250cd5cc418183b9837b74e7d09b906e8b9366": {
+    "name": "Search",
+    "source": "query Search($page: Int, $perPage: Int, $search: String, $type: MediaType, $sort: [MediaSort]) {\n  Page(page: $page, perPage: $perPage) {\n    __typename\n    media(search: $search, type: $type, sort: $sort) {\n      __typename\n      isAdult\n      ...MediaFragment\n    }\n    pageInfo {\n      __typename\n      currentPage\n      hasNextPage\n    }\n  }\n}\nfragment MediaFragment on Media {\n  __typename\n  id\n  title {\n    __typename\n    english\n    native\n    romaji\n  }\n  status\n  startDate {\n    __typename\n    year\n    month\n    day\n  }\n  endDate {\n    __typename\n    day\n    month\n    year\n  }\n  genres\n  episodes\n  duration\n  description\n  coverImage {\n    __typename\n    color\n    extraLarge\n    large\n    medium\n  }\n  trailer {\n    __typename\n    id\n    site\n    thumbnail\n  }\n  externalLinks {\n    __typename\n    site\n    url\n  }\n}"
+  }
+}
